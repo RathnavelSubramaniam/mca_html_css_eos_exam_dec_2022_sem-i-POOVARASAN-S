@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>       
+    <section>
+        <ul>
+            <li class="list active" data-filter="all"> All</li>
+            <li class="list" data-filter="football"> FOOTBALL</a></li>
+            <li class="list" data-filter="cricket"> CRICKET</li>
+            <li class="list" data-filter="volleyball">VOLLEYBALL</li>
+            <li class="list" data-filter="kabadi">KABADI</li>
+            <li class="list" data-filter="carrom"> CARROM</li>
+            <li class="list" data-filter="badminton">BADMINTON</li>
+            <li class="list" data-filter="trophy"> TROPHY</li>
+        </ul>
+        <div class="product">
+            <div class="itemBox" data-item="football"> <img src="image/football_1.jpeg"></div>
+            <div class="itemBox" data-item="cricket"> <img src="image/cricket_1.webp"></div>
+            <div class="itemBox" data-item="volleyball"> <img src="image/volleyball_1.jpg"></div>
+            <div class="itemBox" data-item="kabadi"> <img src="image/kabadi_1.jpeg"></div>
+            <div class="itemBox" data-item="carrom"> <img src="image/carrom_1.webp"></div>
+            <div class="itemBox" data-item="badminton"> <img src="image/badminton_1.jpeg"></div>
+            <div class="itemBox" data-item="trophy"> <img src="image/trophy_1.webp"></div>
+
+            <div class="itemBox" data-item="football"> <img src="image/football_2.jpg"></div>
+            <div class="itemBox" data-item="cricket"> <img src="image/cricket_2.jpeg"></div>
+            <div class="itemBox" data-item="volleyball"> <img src="image/volleyball_2.jpg"></div>
+            <div class="itemBox" data-item="kabadi"> <img src="image/kabadi_2.jpeg"></div>
+            <div class="itemBox" data-item="carrom"> <img src="image/carrom_2.jpeg"></div>
+            <div class="itemBox" data-item="badminton"> <img src="image/badminton_2.jpeg"></div>
+            <div class="itemBox" data-item="trophy"> <img src="image/trophy_2.webp"></div>
+
+            <div class="itemBox" data-item="football"> <img src="image/football_3.jpg"></div>
+            <div class="itemBox" data-item="cricket"> <img src="image/cricket_3.webp"></div>
+            <div class="itemBox" data-item="volleyball"> <img src="image/volleyball_3.jpeg"></div>
+            <div class="itemBox" data-item="carrom"> <img src="image/carrom_3.jpeg"></div>
+            <div class="itemBox" data-item="badminton"> <img src="image/badminton_3.jpeg"></div>
+            <div class="itemBox" data-item="trophy"> <img src="image/trophy_3.jpeg"></div>
+
+            <div class="itemBox" data-item="football"> <img src="image/football_4.jpg"></div>
+            <div class="itemBox" data-item="cricket"> <img src="image/c.jpg"></div>
+            <div class="itemBox" data-item="volleyball"> <img src="image/volleyball_4.jpg"></div>
+            <div class="itemBox" data-item="trophy"> <img src="image/trophy_4.jpeg"></div>
+
+            <div class="itemBox" data-item="cricket"> <img src="image/cricket_5.webp"></div>
+            <div class="itemBox" data-item="volleyball"> <img src="image/volleyball_5.jpg"></div>
+            <div class="itemBox" data-item="trophy"> <img src="image/trophy_5.jpeg"></div>
+
+            <div class="itemBox" data-item="trophy"> <img src="image/trophy_6.jpeg"></div>
+        
+        </div>
+    </section>
+    <script>
+        let list = document.querySelectorAll('.list');
+        let itemBox = document.querySelectorAll('.itemBox');
+
+        for(let i=0;i<list.length;i++){
+            list[i].addEventListener('click',function(){
+                for(let j = 0; j<list.length; j++){
+                    list[j].classList.remove('active')
+                }
+                this.classList.add('active')
+
+                let dataFilter = this.getAttribute('data-filter');
+                
+                for(let k=0;k<itemBox.length;k++){
+                    itemBox[k].classList.remove('active')
+                    itemBox[k].classList.add('hide')
+
+                    if(itemBox[k].getAttribute('data-item')== dataFilter || dataFilter == "all"){
+                        itemBox[k].classList.remove('hide')
+                        itemBox[k].classList.add('active')
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+</html>

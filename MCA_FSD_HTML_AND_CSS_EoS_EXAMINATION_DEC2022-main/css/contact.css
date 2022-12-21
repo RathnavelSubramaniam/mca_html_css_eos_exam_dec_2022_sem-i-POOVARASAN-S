@@ -1,0 +1,45 @@
+.heading{
+    color: red;
+    text-align: center;
+}
+.spam{
+    color: black;
+    text-align: center;
+}
+.contact-form{
+    display: flex;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.contact-form form{
+    display: flex;
+    flex-direction: column;
+    width: 650px;
+    text-align: center;
+}
+
+form input, form textarea{
+    padding: 20px;
+    border-radius: 0.5rem;
+    width: 200%;
+    border: none;
+    outline: none;
+    background: hsla(260, 100%, 44%, 0.1);
+    margin-bottom: 1rem;
+    
+}
+form textarea{
+    resize: none;
+    height: 200px;
+}
+.contact-button{
+width: 160px;
+cursor: pointer;
+background: #eb0b0b;
+color: #fff;
+justify-content: center;
+text-transform: uppercase;
+letter-spacing: 1px;
+margin-left: 90%;
+}
